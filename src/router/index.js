@@ -8,12 +8,47 @@ import Admin from '@/components/Admin'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+let router = new Router({
+  routes: [{
+    path: '/',
+    name: 'HelloWorld',
+    component: HelloWorld
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+    meta: {
+      guest: true
     }
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register,
+    meta: {
+      guest: true
+    }
+  },
+  {
+    path: '/dashboard',
+    name: 'userboard',
+    component: UserBoard,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: Admin,
+    meta: {
+      requiresAuth: true,
+      is_admin: true
+    }
+  }
   ]
 })
+
+
+export default router
