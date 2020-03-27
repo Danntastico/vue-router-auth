@@ -90,6 +90,7 @@ app.use(router)
 
 let port = process.env.PORT || 3000
 
+// eslint-disable-next-line no-unused-vars
 let server = app.listen(port, () => {
   console.log('Express server listening on port: ' + port)
 })
