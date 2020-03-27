@@ -2,7 +2,7 @@
 
 const sqlite3 = require('sqlite3').verbose()
 
-class Db {
+class DB {
   constructior (file) {
     this.db = new sqlite3.Database(file)
     this.createTable()
@@ -51,4 +51,4 @@ class Db {
   }
 }
 
-module.export = Db
+module.export = DB

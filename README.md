@@ -1,4 +1,8 @@
 # vue-router-auth
+I'm not the author of this program, it is just a tutorial.
+Tutorial: 
+https://www.digitalocean.com/community/tutorials/how-to-set-up-vue-js-authentication-and-route-handling-using-vue-router
+
 
 > Setting up vue js authentication and route handling
 
