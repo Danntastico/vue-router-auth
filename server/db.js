@@ -8,7 +8,16 @@ class Db {
     this.createTable()
   }
 
-  createTable () {}
+  createTable () {
+    const sql = `
+      CREATE TABLE IF NOT EXISTS user (
+        id integer PRIMARY KEY,
+        name text,
+        email text UNIQUE,
+        user_pass text,
+        is_admin integer)`
+    return this.db.run(sql)
+  }
 
   selectByEmail (email, callback) {}
 
@@ -20,4 +29,4 @@ class Db {
 
 }
 
-module.export = Db;
+module.export = Db
