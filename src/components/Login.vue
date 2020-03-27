@@ -20,3 +20,25 @@
         </form>
     </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+  methods : {
+    handleSubmit (e) {
+      e.preventDefault()
+      if (this.password.length > 0) {
+        this.$http.post('http://localhost:3000/login', {
+          email: this.email,
+          password: this.password
+        })
+      }
+    }
+  }
+}
+</script>
