@@ -29,7 +29,11 @@ class Db {
   }
 
   insertAdmin (user, callback) {
-    
+    return this.db.run(
+      'INSERT INTO user (name,email,user_pass,is_admin) VALUES (?,?,?,?)',
+      user, (err) => {
+        callback(err)
+      })
   }
 
   selectAll (callback) {}
