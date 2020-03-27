@@ -19,14 +19,22 @@ class Db {
     return this.db.run(sql)
   }
 
-  selectByEmail (email, callback) {}
+  selectByEmail (email, callback) {
+    return this.db.get(
+      `SELECT * FROM user WHERE email = ?`,
+      [email], (err, row) => {
+        callback(err, row)
+      }
+    )
+  }
 
-  insertAdmin (user, callback) {}
+  insertAdmin (user, callback) {
+    
+  }
 
   selectAll (callback) {}
 
   insert (user, callback) {}
-
 }
 
 module.export = Db
