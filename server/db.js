@@ -36,9 +36,19 @@ class Db {
       })
   }
 
-  selectAll (callback) {}
+  selectAll (callback) {
+    return this.db.all(`SELECT * FROM user`, function (err, rows) {
+      callback(err, rows)
+    })
+  }
 
-  insert (user, callback) {}
+  insert (user, callback) {
+    return this.db.run(
+      'INSERT INTO user (name,email,user_pass) VALUES (?,?,?)',
+      user, (err) => {
+        callback(err)
+      })
+  }
 }
 
 module.export = Db
